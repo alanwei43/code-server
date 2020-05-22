@@ -1,6 +1,6 @@
 # code server with ubuntu:lts
 
-带有 `ubuntu:lts` 运行环境的 code-server, 使用如下
+带有 `ubuntu:20.04` 运行环境的 code-server, 使用如下
 
 ```sh
 # 显示帮助
