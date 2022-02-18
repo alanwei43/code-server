@@ -12,11 +12,11 @@
 **查看帮助**
 
 ```bash
-docker run -it --rm alanway/code-server code-server --help
+docker run -it --rm alanway/code-server:3.9.3 code-server --help
 ```
 
 **运行**
 
 ```bash
-docker run -d -p 8080:80 -v $PWD:/app 
+docker run -d -p 8080:80 -v $PWD:/app code-server /app
 ```
