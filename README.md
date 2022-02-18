@@ -2,7 +2,7 @@
 
 ![aliyun](https://github.com/alanwei43/code-server/actions/workflows/aliyun.yml/badge.svg)
 ![github](https://github.com/alanwei43/code-server/actions/workflows/github.yml/badge.svg)
-![docker-hub](https://github.com/alanwei43/code-server/actions/workflows/github.yml/badge.svg)
+![docker-hub](https://github.com/alanwei43/code-server/actions/workflows/docker-hub.yml/badge.svg)
 
 ## 简介
 
