@@ -2,7 +2,9 @@ name: Publish to Aliyun
 
 on:
   push:
-    branches: *
+    branches: 
+      - v*
+      - master
 
 env:
   IMAGE_NAME: code-server
