@@ -1,4 +1,4 @@
-name: Publish to Docker Hub
+name: Publish to GitHub Docker
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
         run: docker build . --file Dockerfile --tag $IMAGE_NAME
 
       - name: Log into registry
-        run: echo "${{ secrets.DOCKER_HUB_PASSWORD }}" | docker login -u alanway --password-stdin
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
 
       - name: Set output
         id: vars
@@ -27,8 +27,8 @@ jobs:
 
       - name: Push image
         run: |
-          IMAGE_ID=alanway/$IMAGE_NAME
-          
+          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/$IMAGE_NAME
+
           # Change all uppercase to lowercase
           IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
           echo "image id: $IMAGE_ID"
