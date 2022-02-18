@@ -1,5 +1,9 @@
 # code-server 镜像
 
+![aliyun](https://github.com/alanwei43/code-server/actions/workflows/aliyun.yml/badge.svg)
+![github](https://github.com/alanwei43/code-server/actions/workflows/github.yml/badge.svg)
+![docker-hub](https://github.com/alanwei43/code-server/actions/workflows/github.yml/badge.svg)
+
 ## 简介
 
 本仓库基于[code-server](https://github.com/coder/code-server)制作的对应的Docker镜像, 支持的版本列表即是分支列表.

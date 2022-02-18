@@ -34,6 +34,7 @@ jobs:
           echo "image id: $IMAGE_ID"
 
           VERSION=$(echo "${{ steps.vars.outputs.short_ref }}" | sed -e 's/^v//')
+          [ "$VERSION" == "master" ] && VERSION=latest
           echo "version: $VERSION"
 
           echo IMAGE_ID=$IMAGE_ID
