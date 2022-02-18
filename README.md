@@ -20,3 +20,12 @@ docker run -it --rm alanway/code-server:3.9.3 code-server --help
 ```bash
 docker run -d -p 8080:80 -v $PWD:/app code-server /app
 ```
+
+## 关于 GitHub Action
+
+配置直接参考 `.github` 目录下的配置即可, 需要注意的是需要在仓库设置里增加以下 **Secrets**:
+
+* **ALIYUN_EMAIL** 发布阿里云仓库的所需的阿里云账号的登陆email账号(比如 `xxx@163.com`)
+* **ALIYUN_USERNAME** 发布阿里云仓库的所需的阿里云账号的账号Id (假如你的阿里云镜像id是 `registry.cn-hangzhou.aliyuncs.com/alanwei/code-server:3.9.3`, 那这个值就配置成 `alanwei`)
+* **ALIYUN_PASSWORD** 发布阿里云仓库的所需的阿里云账号的密码 
+* **DOCKER_HUB_PASSWORD** 发布Docker Hub所需的token

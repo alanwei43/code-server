@@ -19,7 +19,7 @@ jobs:
         run: docker build . --file Dockerfile --tag $IMAGE_NAME
 
       - name: Log into registry
-        run: echo "${{ secrets.ALIYUN_TOKEN }}" | docker login registry.cn-hangzhou.aliyuncs.com -u treyrs@163.com --password-stdin
+        run: echo "${{ secrets.ALIYUN_PASSWORD }}" | docker login registry.cn-hangzhou.aliyuncs.com -u ${{ secrets.ALIYUN_EMAIL }} --password-stdin
 
       - name: Set output
         id: vars
@@ -27,7 +27,7 @@ jobs:
 
       - name: Push image
         run: |
-          IMAGE_ID=registry.cn-hangzhou.aliyuncs.com/alanwei/$IMAGE_NAME
+          IMAGE_ID="registry.cn-hangzhou.aliyuncs.com/${{ secrets.ALIYUN_USERNAME }}/$IMAGE_NAME"
 
           # Change all uppercase to lowercase
           IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
