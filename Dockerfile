@@ -8,4 +8,5 @@ COPY ./config.yaml ./
 ADD https://github.com/coder/code-server/releases/download/v${CODE_VERSION}/code-server_${CODE_VERSION}_amd64.deb ./
 RUN dpkg -i code-server_${CODE_VERSION}_amd64.deb
 
-CMD ["code-server"]
+ENTRYPOINT ["code-server"]
+CMD ["--config", "/code-server/config.yaml", "/app"]
