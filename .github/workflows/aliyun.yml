@@ -1,8 +1,9 @@
-name: Publish to GitHub Docker
+name: Publish to Aliyun
 
 on:
   push:
-    branches: v*
+    branches: 
+      - aliyun-*
 
 env:
   IMAGE_NAME: code-server
@@ -32,7 +33,7 @@ jobs:
           # Change all uppercase to lowercase
           IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
 
-          VERSION=$(echo "${{ steps.vars.outputs.short_ref }}" | sed -e 's/^v//')
+          VERSION=$(echo "${{ steps.vars.outputs.short_ref }}" | sed -e 's/^aliyun-//')
           [ "$VERSION" == "master" ] && VERSION=latest
           echo "version: $VERSION"
 
