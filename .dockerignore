@@ -1,0 +1,6 @@
+*
+.*
+!Dockerfile
+!*.deb
+!config.yaml
+!sources.list
