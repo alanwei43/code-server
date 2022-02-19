@@ -8,7 +8,7 @@
 
 本仓库基于[code-server](https://github.com/coder/code-server)制作的对应的Docker镜像, 支持的版本列表即是分支列表.
 
-镜像地址: [alanway/code-server](https://hub.docker.com/alanway/code-server)
+镜像地址: [alanway/code-server](https://hub.docker.com/r/alanway/code-server/tags). (其中的 *ubuntu*, *node*, *jdk*标签已经废弃不在维护使用.)
 
 
 ## 使用示例
@@ -40,7 +40,7 @@ docker run --name code-server \
   -p 8089:80 \ # 设置code server在主机监听的端口号为 8089
   -v $PWD:/app \ # 把当前目录映射到容器内的目录
   -e PASSWORD='ps123' \ # 设置密码
-  code-server --bind-addr 0.0.0.0:80 --auth password /app # 这里设置密码认证, 以及 code server 打开的目录
+  code-server --bind-addr 0.0.0.0:80 --auth password /app # 这里设置密码认证, 以及 code server 打开的目录, 注意这里要监听 0.0.0.0:80, 如果仅监听(默认行为) 127.0.0.1:80, 物理机可能无法访问.
 ```
 
 ## 关于 GitHub Action
