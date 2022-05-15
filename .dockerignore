@@ -5,3 +5,4 @@
 !config.yaml
 !sources.list
 !README.md
+!scripts/entrypoint.sh
