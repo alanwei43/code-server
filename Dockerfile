@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 EXPOSE 80
 ENV PORT 80
-ENV CODE_VERSION 4.1.0
+ENV CODE_VERSION 4.9.1
 WORKDIR /code-server
 COPY ./config.yaml ./
 ADD https://github.com/coder/code-server/releases/download/v${CODE_VERSION}/code-server_${CODE_VERSION}_amd64.deb ./

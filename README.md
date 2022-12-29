@@ -64,3 +64,12 @@ sudo docker run --name cs -it --rm code-server --help
 sudo docker run --name cs -it --rm -p 49178:80 -v $PWD:/app -e PASSWORD='ps123' code-server --bind-addr 0.0.0.0:80 --auth password /app
 sudo docker exec -it cs bash
 ```
+
+## 新版本发布
+
+> 假设 `code-server` 最新分支为 `4.9.1`
+
+1. 切换到 `master` 分支
+1. 修改文件 `Dockerfile` 里的 `ENV CODE_VERSION 4.9.1` 中的版本号
+1. 推送到远程`master`
+1. 从 `master` 切换分支 `v4.9.1` 然后推送到远程
