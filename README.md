@@ -25,6 +25,9 @@ docker run -it --rm alanway/code-server --help
 ```bash
 docker run -v $PWD:/app -P alanway/code-server # 运行一个容器实例
 
+# 国内用户可使用阿里云镜像
+docker run -v $PWD:/app -P registry.cn-hangzhou.aliyuncs.com/alanwei/code-server # 运行一个容器实例
+
 # 启动 code server, 并把当前目录设为工作目录
 docker run --name code-server \ # 设置一个名称
   --restart=always \ # 设置容器总是重启
