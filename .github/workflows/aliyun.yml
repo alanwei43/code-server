@@ -20,7 +20,7 @@ jobs:
         run: docker build . --file Dockerfile --tag $IMAGE_NAME
 
       - name: Log into registry
-        run: echo "${{ secrets.ALIYUN_PASSWORD }}" | docker login registry.cn-hangzhou.aliyuncs.com -u ${{ secrets.ALIYUN_EMAIL }} --password-stdin
+        run: echo "${{ secrets.ALIYUN_PASSWORD }}" | docker login registry.cn-hangzhou.aliyuncs.com --username ${{ secrets.ALIYUN_EMAIL }} --password-stdin
 
       - name: Set output
         id: vars
