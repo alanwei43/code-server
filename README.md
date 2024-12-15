@@ -4,6 +4,13 @@
 ![github](https://github.com/alanwei43/code-server/actions/workflows/github.yml/badge.svg)
 ![docker-hub](https://github.com/alanwei43/code-server/actions/workflows/docker-hub.yml/badge.svg)
 
+本项目会自动推送镜像到三个仓库:
+* 官方仓库: `alanway/code-server`
+* GitHub仓库: `ghcr.io/alanwei43/code-server/code-server:4.95.3`
+* 阿里云仓库: `registry.cn-hangzhou.aliyuncs.com/alanwei/code-server`
+
+支持的tag参考项目的分支列表
+
 ## 简介
 
 本仓库基于[code-server](https://github.com/coder/code-server)制作的对应的Docker镜像, 支持的版本列表即是分支列表.
@@ -12,7 +19,6 @@
 
 
 ## 使用示例
-
 
 **查看帮助**
 
@@ -54,19 +60,6 @@ docker run --name code-server \
 * **ALIYUN_USERNAME** 发布阿里云仓库的所需的阿里云账号的账号Id (假如你的阿里云镜像id是 `registry.cn-hangzhou.aliyuncs.com/alanwei/code-server:latest`, 那这个值就配置成 `alanwei`)
 * **ALIYUN_PASSWORD** 发布阿里云仓库的所需的阿里云账号的密码 
 * **DOCKER_HUB_PASSWORD** 发布 Docker Hub 所需的token
-
-
-## 以下用于本地开发验证调试
-
-```bash
-# 本地构建
-sudo docker build --file ./Dockerfile.local --tag code-server .
-
-# 本地调试
-sudo docker run --name cs -it --rm code-server --help
-sudo docker run --name cs -it --rm -p 49178:80 -v $PWD:/app -e PASSWORD='ps123' code-server --bind-addr 0.0.0.0:80 --auth password /app
-sudo docker exec -it cs bash
-```
 
 ## 新版本发布
 
