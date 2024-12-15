@@ -4,6 +4,7 @@ on:
   push:
     branches: 
       - v*
+      - master
 
 env:
   IMAGE_NAME: code-server
